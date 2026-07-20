@@ -2,7 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #14121f;
+
+  --brand-indigo: #534ab7;
+  --brand-indigo-dark: #3d3690;
+  --brand-indigo-light: #e8e6f9;
+  --brand-orange: #d85a30;
+  --brand-orange-dark: #b8451f;
+  --brand-orange-light: #fbe7de;
+  --brand-ink: #14121f;
+  --brand-muted: #6b6879;
+  --brand-surface: #f8f7fb;
+  --brand-border: #e7e5ef;
 }
 
 @theme inline {
@@ -10,17 +21,88 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-indigo-dark: var(--brand-indigo-dark);
+  --color-brand-indigo-light: var(--brand-indigo-light);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-dark: var(--brand-orange-dark);
+  --color-brand-orange-light: var(--brand-orange-light);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-border: var(--brand-border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--brand-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--brand-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18px, -26px) scale(1.06); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-22px, 18px) scale(1.04); }
+}
+
+@keyframes drift-rotate {
+  0% { transform: rotate(-4deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-14px); }
+  100% { transform: rotate(-4deg) translateY(0); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-float-a {
+  animation: float-a 9s ease-in-out infinite;
+}
+
+.animate-float-b {
+  animation: float-b 11s ease-in-out infinite;
+}
+
+.animate-drift-rotate {
+  animation: drift-rotate 7s ease-in-out infinite;
+}
+
+.animate-bob {
+  animation: bob 4s ease-in-out infinite;
+}
+
+.marquee-track {
+  animation: marquee 34s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-a,
+  .animate-float-b,
+  .animate-drift-rotate,
+  .animate-bob,
+  .marquee-track {
+    animation: none;
+  }
 }
