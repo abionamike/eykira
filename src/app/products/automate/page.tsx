@@ -11,7 +11,7 @@ import {
   whyChoose,
 } from "@/lib/automate-content";
 import { benefitIcons, serviceIcons } from "@/lib/icon-maps";
-import HeroVisual from "@/components/HeroVisual";
+import { AutomateScene } from "@/components/illustrations/scenes";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import { IconCheck } from "@/components/icons";
@@ -57,7 +57,7 @@ export default function AutomatePage() {
               </a>
             </div>
           </div>
-          <HeroVisual chips={["AI Receptionist", "24/7 Live", "7 Services"]} />
+          <AutomateScene />
         </div>
       </section>
 

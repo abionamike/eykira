@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { products } from "@/lib/products";
 import { marketplaceFeatureIcons, productIcons } from "@/lib/icon-maps";
-import HeroVisual from "@/components/HeroVisual";
+import { MarketScene } from "@/components/illustrations/scenes";
 import Reveal from "@/components/Reveal";
 import { IconArrowRight } from "@/components/icons";
 
@@ -62,7 +62,7 @@ export default function MarketplacePage() {
               easy-to-use storefront network — putting local commerce first.
             </p>
           </div>
-          <HeroVisual chips={["Multi-vendor", "Secure Checkout", "Coming Soon"]} />
+          <MarketScene />
         </div>
       </section>
 

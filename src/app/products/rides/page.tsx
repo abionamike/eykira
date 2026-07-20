@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { products } from "@/lib/products";
 import { productIcons, ridesStepIcons } from "@/lib/icon-maps";
-import HeroVisual from "@/components/HeroVisual";
+import { RideScene } from "@/components/illustrations/scenes";
 import Reveal from "@/components/Reveal";
 import { IconArrowRight } from "@/components/icons";
 
@@ -42,7 +42,7 @@ export default function RidesPage() {
               counter — a fairer, more transparent way to move around town.
             </p>
           </div>
-          <HeroVisual chips={["Name Your Fare", "Driver Accepted", "Coming Soon"]} />
+          <RideScene />
         </div>
       </section>
 

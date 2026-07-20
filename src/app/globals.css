@@ -97,12 +97,101 @@ html {
   animation: marquee 34s linear infinite;
 }
 
+.text-gradient {
+  background: linear-gradient(90deg, var(--brand-indigo), var(--brand-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.chat-bubble {
+  opacity: 0;
+  animation: bubble-in 0.5s ease-out forwards;
+}
+
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.typing-dot {
+  animation: typing-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.bar-grow {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: bar-grow 0.9s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes route-dash {
+  to { stroke-dashoffset: 0; }
+}
+
+.route-path {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: route-dash 2.6s 0.4s ease-out forwards;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.toast-in {
+  opacity: 0;
+  animation: toast-in 0.6s ease-out forwards;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+  70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float-a,
   .animate-float-b,
   .animate-drift-rotate,
   .animate-bob,
-  .marquee-track {
+  .marquee-track,
+  .typing-dot,
+  .pulse-dot {
     animation: none;
+  }
+
+  .chat-bubble,
+  .toast-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .bar-grow {
+    animation: none;
+    transform: none;
+  }
+
+  .route-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .motion-car {
+    display: none;
   }
 }
