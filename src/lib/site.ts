@@ -7,7 +7,7 @@ export const site = {
   address: "1826 Brimwood Crescent, Peterborough, Ontario, Canada",
   phone: "+1 (416) 648-7484",
   phoneHref: "+14166487484",
-  email: "encodebyte.ca@gmail.com",
+  email: "contact@eykira.com",
   incorporation: "Incorporated in the Province of Ontario, Canada",
   founded: 2026,
 } as const;

@@ -124,7 +124,7 @@ export default function Home() {
               About Eykira
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
-              Built in Peterborough, for businesses everywhere.
+              Started in Peterborough. Built for everywhere.
             </h2>
             <p className="mt-6 text-base leading-7 text-brand-muted">
               We put intelligent technology to work — so businesses grow and

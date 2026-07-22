@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import Reveal from "@/components/Reveal";
-import HeroVisual from "@/components/HeroVisual";
+import { ContactScene } from "@/components/illustrations/scenes";
 import { IconMail, IconMapPin, IconPhone } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ const channels = [
     name: "Visit us",
     value: site.address,
     href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address)}`,
-    description: "Our headquarters in Peterborough, Ontario, Canada.",
+    description: "Our home base in Peterborough, Ontario, Canada.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function ContactPage() {
               out and our team will get back to you.
             </p>
           </div>
-          <HeroVisual chips={["Fast Reply", "Free Consult", "Ontario, CA"]} />
+          <ContactScene />
         </div>
       </section>
 

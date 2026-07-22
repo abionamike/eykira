@@ -163,11 +163,21 @@ html {
   animation: pulse-dot 2s infinite;
 }
 
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+  transform-origin: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float-a,
   .animate-float-b,
   .animate-drift-rotate,
   .animate-bob,
+  .animate-spin-slow,
   .marquee-track,
   .typing-dot,
   .pulse-dot {

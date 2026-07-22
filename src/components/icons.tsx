@@ -275,6 +275,15 @@ export function IconPhone({ className }: IconProps) {
   );
 }
 
+export function IconSend({ className }: IconProps) {
+  return (
+    <svg className={className} {...base}>
+      <path d="M21.5 2.5 11 13" />
+      <path d="M21.5 2.5 14.5 21.5 11 13 2.5 9.5 21.5 2.5Z" />
+    </svg>
+  );
+}
+
 export function IconMail({ className }: IconProps) {
   return (
     <svg className={className} {...base}>

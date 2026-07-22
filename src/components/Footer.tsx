@@ -58,7 +58,9 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-brand-border pt-8 text-xs text-brand-muted sm:flex-row sm:items-center">
           <p>&copy; {new Date().getFullYear()} {site.legalName} All rights reserved.</p>
-          <p>Proudly built in Peterborough, Ontario, Canada.</p>
+          <a href={`mailto:${site.email}`} className="hover:text-brand-indigo">
+            {site.email}
+          </a>
         </div>
       </div>
     </footer>

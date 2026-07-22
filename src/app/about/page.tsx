@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import { products } from "@/lib/products";
 import { productIcons } from "@/lib/icon-maps";
 import Reveal from "@/components/Reveal";
-import HeroVisual from "@/components/HeroVisual";
+import { AboutScene } from "@/components/illustrations/scenes";
 import { IconBolt, IconShieldCheck, IconUsers } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -44,14 +44,15 @@ export default function AboutPage() {
               About Us
             </p>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
-              A Peterborough company building for the world.
+              Putting intelligent technology to work.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-brand-muted">
-              {site.legalName}, {site.incorporation.toLowerCase()}, headquartered at{" "}
-              {site.address}.
+              {site.legalName} is a technology corporation incorporated in the Province
+              of Ontario, founded by cofounders based in Peterborough — and built to
+              serve businesses and communities everywhere.
             </p>
           </div>
-          <HeroVisual chips={["Ontario Inc.", "Peterborough HQ", "3 Products"]} />
+          <AboutScene />
         </div>
       </section>
 
@@ -62,16 +63,19 @@ export default function AboutPage() {
               Our Story
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-brand-ink">
-              Founded to put intelligent technology to work.
+              Just getting started — and building fast.
             </h2>
             <p className="mt-6 text-base leading-7 text-brand-muted">
               Businesses of every size lose revenue, time, and customers to problems
               modern AI can solve — missed calls, slow follow-ups, manual busywork.
+              We founded Eykira to fix that.
             </p>
             <p className="mt-4 text-base leading-7 text-brand-muted">
-              We started with Eykira Automate, and are now building a wider ecosystem —
-              a multi-vendor marketplace and a name-your-fare ride-sharing app — all
-              under one mission: make business and everyday life work better.
+              We&apos;re starting out in Peterborough, Ontario, where our founding team
+              is based — launching with Eykira Automate and building toward a wider
+              ecosystem: a multi-vendor marketplace and a name-your-fare ride-sharing
+              app, all under one mission to make business and everyday life work
+              better.
             </p>
           </Reveal>
           <Reveal delay={100} className="rounded-3xl border border-brand-border bg-brand-surface p-8">

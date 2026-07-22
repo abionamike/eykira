@@ -3,7 +3,15 @@ import PhoneChat from "./PhoneChat";
 import DashboardCard from "./DashboardCard";
 import RideMap from "./RideMap";
 import Storefront from "./Storefront";
-import { IconCar } from "@/components/icons";
+import { site } from "@/lib/site";
+import {
+  IconBot,
+  IconCar,
+  IconMapPin,
+  IconPhone,
+  IconSend,
+  IconStorefront,
+} from "@/components/icons";
 
 function Blobs({ flip = false }: { flip?: boolean }) {
   return (
@@ -101,6 +109,134 @@ export function RideScene() {
       <div className="relative z-10 animate-bob">
         <RideMap />
       </div>
+    </div>
+  );
+}
+
+const orbitNodes = [
+  {
+    label: "Automate",
+    icon: IconBot,
+    color: "bg-brand-indigo",
+    position: "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
+    delay: "0s",
+  },
+  {
+    label: "Marketplace",
+    icon: IconStorefront,
+    color: "bg-brand-orange",
+    position: "left-[7%] top-3/4 -translate-x-1/2 -translate-y-1/2",
+    delay: "0.8s",
+  },
+  {
+    label: "Rides",
+    icon: IconMapPin,
+    color: "bg-brand-indigo",
+    position: "right-[7%] top-3/4 translate-x-1/2 -translate-y-1/2",
+    delay: "1.6s",
+  },
+];
+
+/** About hero: the three products orbiting one company core. */
+export function AboutScene() {
+  return (
+    <div className="relative mx-auto flex h-[400px] w-full max-w-md items-center justify-center lg:h-[440px]">
+      <Blobs />
+      <div className="relative h-[300px] w-[300px] sm:h-[340px] sm:w-[340px]">
+        <svg viewBox="0 0 340 340" className="animate-spin-slow absolute inset-0 h-full w-full">
+          <circle
+            cx="170"
+            cy="170"
+            r="168"
+            fill="none"
+            stroke="var(--brand-indigo)"
+            strokeOpacity="0.25"
+            strokeWidth="2"
+            strokeDasharray="4 10"
+          />
+          <circle cx="170" cy="2" r="5" fill="var(--brand-orange)" />
+          <circle cx="170" cy="338" r="3.5" fill="var(--brand-indigo)" />
+        </svg>
+
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-brand-border bg-white px-6 py-4 text-center shadow-xl shadow-brand-indigo/10">
+          <p className="text-lg font-bold tracking-tight text-brand-ink">Eykira</p>
+          <p className="mt-0.5 whitespace-nowrap text-[10px] font-medium text-brand-muted">
+            One ecosystem · Ontario, Canada
+          </p>
+        </div>
+
+        {orbitNodes.map((node) => (
+          <div
+            key={node.label}
+            className={`absolute ${node.position} animate-bob flex flex-col items-center gap-1.5`}
+            style={{ animationDelay: node.delay }}
+          >
+            <span
+              className={`flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg ${node.color}`}
+            >
+              <node.icon className="h-6 w-6" />
+            </span>
+            <span className="rounded-full border border-brand-border bg-white px-2.5 py-0.5 text-[10px] font-semibold text-brand-ink shadow-sm">
+              {node.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** Contact hero: an email being composed to the team. */
+export function ContactScene() {
+  return (
+    <div className="relative mx-auto flex h-[400px] w-full max-w-md items-center justify-center lg:h-[440px]">
+      <Blobs flip />
+      <div className="relative z-10 w-80 rounded-3xl border border-brand-border bg-white shadow-2xl shadow-brand-indigo/15 sm:w-[22rem]">
+        <div className="flex items-center gap-1.5 border-b border-brand-border px-4 py-3">
+          <span className="h-2.5 w-2.5 rounded-full bg-brand-orange/40" />
+          <span className="h-2.5 w-2.5 rounded-full bg-brand-indigo/30" />
+          <span className="h-2.5 w-2.5 rounded-full bg-brand-border" />
+          <p className="ml-2 text-xs font-semibold text-brand-muted">New message</p>
+        </div>
+        <div className="space-y-3 p-5">
+          <div className="flex items-center gap-2 text-xs">
+            <span className="w-12 shrink-0 text-brand-muted">To</span>
+            <span className="rounded-full bg-brand-indigo-light px-2.5 py-1 font-semibold text-brand-indigo-dark">
+              {site.email}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 border-t border-brand-border pt-3 text-xs">
+            <span className="w-12 shrink-0 text-brand-muted">Subject</span>
+            <span className="font-semibold text-brand-ink">Free automation consultation</span>
+          </div>
+          <div className="space-y-2 border-t border-brand-border pt-4">
+            <div className="h-2 w-full rounded-full bg-brand-surface" />
+            <div className="h-2 w-5/6 rounded-full bg-brand-surface" />
+            <div className="h-2 w-2/3 rounded-full bg-brand-surface" />
+          </div>
+          <div className="flex items-center justify-between pt-2">
+            <span className="flex items-center gap-2 rounded-full bg-brand-indigo px-4 py-2 text-xs font-semibold text-white shadow-md shadow-brand-indigo/20">
+              Send
+              <IconSend className="h-3.5 w-3.5" />
+            </span>
+            <span className="text-[10px] text-brand-muted">Attach · Aa · 🙂</span>
+          </div>
+        </div>
+      </div>
+
+      <span
+        className="toast-in absolute right-0 top-14 z-20 flex items-center gap-1.5 rounded-full border border-brand-border bg-white px-3 py-1.5 text-[11px] font-semibold text-brand-ink shadow-md sm:-right-2"
+        style={{ animationDelay: "0.9s" }}
+      >
+        <span className="text-green-600">✓</span> Replies within 1 business day
+      </span>
+      <span
+        className="toast-in absolute bottom-14 left-0 z-20 flex items-center gap-2 rounded-full bg-brand-indigo px-3.5 py-2 text-[11px] font-semibold text-white shadow-lg sm:-left-2"
+        style={{ animationDelay: "1.7s" }}
+      >
+        <IconPhone className="h-3.5 w-3.5" />
+        {site.phone}
+      </span>
     </div>
   );
 }
